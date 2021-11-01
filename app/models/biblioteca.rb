@@ -1,0 +1,2 @@
+class Biblioteca < ApplicationRecord
+end

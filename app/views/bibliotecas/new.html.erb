@@ -1,0 +1,44 @@
+<%= stylesheet_link_tag "tarjeta.css" %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<style media="screen">
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #ecf0f3;
+  }
+</style>
+
+<body>
+<%= form_with(model: @biblioteca, local: true) do |form| %>
+  <% if @biblioteca.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@biblioteca.errors.count, "error") %> mensaje</h2>
+        <ul>
+          <%= @biblioteca.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+    </ul></div>
+    <% end %>
+<div class="wrapper">
+    <div class="field name"><strong><%= form.label :titulo %></strong></div>
+    <div class="field about"><%= form.text_field :titulo %></div>
+    <div class="field name"><strong><%= form.label :autor %></strong></div>
+    <div class="field about"><%= form.text_field :autor %></div>
+    <div class="field name"><strong><%= form.label :estado %></strong></div>
+    <div class="field about"><%= form.text_field :estado %></div>
+    <div class="field name"><strong><%= form.label :fecha_prestamo %></strong></div>
+    <div class="field about"><%= form.text_field :fecha_prestamo %></div>
+    <div class="field name"><strong><%= form.label :fecha_devolucion %></strong></div>
+    <div class="field about"><%= form.text_field :fecha_devolucion %></div>
+    <br>
+        <div class="actions">
+          <%= form.submit %>
+        </div> <% end %>
+        <br>
+        <div class="buttons">
+
+          <%= link_to 'Regresar', bibliotecas_path %>
+        </div>
+</div>

@@ -1,0 +1,41 @@
+        <%= stylesheet_link_tag "tarjeta.css" %>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <style media="screen">
+          body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #ecf0f3;
+          }
+        </style>
+
+<body>
+
+<div class="wrapper">
+
+
+
+
+    <div class="name"><strong>Título:</strong></div>
+    <div class="about"><%= @biblioteca .titulo %></div>
+    <div class="name"><strong>Autor:</strong></div>
+    <div class="about"><%= @biblioteca .autor %></div>
+    <br>
+    <div><strong>Estado:</strong></div>
+    <div><%= @biblioteca .estado %></div>
+    <br>
+    <div><strong>Fecha de préstamo</strong></div>
+    <div><%= @biblioteca .fecha_prestamo %></div>
+    <br>
+    <div><strong>Fecha de devolución</strong></div>
+    <div><%= @biblioteca .fecha_devolucion %></div>
+    <br>
+    <div class="buttons">
+      <%= link_to 'Editar', edit_biblioteca_path(@biblioteca) %>
+      <%= link_to 'Regresar', bibliotecas_path %>
+    </div>
+
+
+  </div>
+</body>
